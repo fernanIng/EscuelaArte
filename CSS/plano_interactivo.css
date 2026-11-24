@@ -1,0 +1,313 @@
+
+.st0, .st1, .st2, .st3, .st4 {
+  font-family: FiraSans-Bold, 'Fira Sans';
+  font-weight: 700;
+}
+
+.st0, .st1, .st2, .st4 {
+  font-size: 36px;
+}
+
+.st5, .st6 {
+  fill: #706f6f;
+}
+
+.st1, .st7 {
+  fill: #0498ad;
+}
+
+.st2, .st8 {
+  fill: #e6007e;
+}
+
+.st9 {
+  stroke: #1d1d1b;
+  stroke-width: .72px;
+}
+
+.st9, .st10 {
+  fill: none;
+}
+
+.st11 {
+  fill: url(#_10_lpp_10_4);
+}
+
+.st12 {
+  font-family: FiraSans-Light, 'Fira Sans';
+  font-weight: 300;
+}
+
+.st12, .st3 {
+  fill: #fff;
+}
+
+.st12, .st13 {
+  font-size: 20px;
+}
+
+.st14 {
+  letter-spacing: .67em;
+}
+
+.st15, .st4 {
+  fill: #eaeaea;
+}
+
+.st3 {
+  font-size: 24px;
+}
+
+.st16 {
+  fill: url(#_10_lpp_10_1);
+}
+
+.st17 {
+  fill: url(#Degradado_sin_nombre_35);
+}
+
+.st6 {
+  font-family: FiraSans-Regular, 'Fira Sans';
+  font-size: 12px;
+}
+
+.st13 {
+  font-family: FiraSans-ExtraLight, 'Fira Sans';
+  font-weight: 200;
+  letter-spacing: .07em;
+}
+
+.st18 {
+  fill: url(#_10_lpp_10_);
+}
+
+.st19 {
+  fill: url(#_10_lpp_10_2);
+}
+
+.st20 {
+  fill: url(#_10_lpp_10_3);
+}
+
+[id^="plano-antiguo-"] {
+  cursor: pointer;
+  transition: fill 0.25s ease, stroke-width 0.25s ease;
+}
+
+[id^="plano-antiguo-"]:hover {
+   fill: #e6007e;
+   stroke-width: 7;
+}
+
+[id^="plano-nuevo-"] {
+   cursor: pointer;
+   transition: fill 0.25s ease, stroke-width 0.25s ease;
+}
+
+[id^="plano-nuevo-"]:hover {
+   fill: #0498ad;
+   stroke-width: 7;
+}
+
+
+
+[id^="plano-nuevo-nombre-edificioNuevo"] {
+   cursor: pointer;
+   transition: fill 0.25s ease, stroke-width 0.25s ease;
+}
+
+
+[id^="plano-antiguo-nombre-edificioAntiguo"] {
+   cursor: pointer;
+   transition: fill 0.25s ease, stroke-width 0.25s ease;
+}
+
+[id^="pasillo_x5F_cristal1"] {
+   cursor: pointer;
+   transition: fill 0.25s ease, stroke-width 0.25s ease;
+}
+
+.map-app {
+
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  
+  position: relative;
+}
+
+
+.middlebar {
+  font-family: FiraSans-Bold, 'Fira Sans';
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  width: 90%;
+  max-width: 360px;
+  max-height: 80vh;
+  overflow-y: auto;
+
+  box-sizing: border-box;
+  padding: 30px;
+
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+
+  /* El panel empieza oculto y centrado */
+  transform: translate(-50%, -50%) scale(0.95);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+/* Cuando se selecciona una sala, aparece el panel */
+
+.middlebar.open {
+
+    transform: translate(-50%, -50%) scale(1);
+ 
+    opacity: 1;
+
+    visibility: visible;
+
+}
+ 
+/* Botón para cerrar el panel */
+
+.close-button {
+
+    position: absolute;
+ 
+    top: 15px;
+
+    right: 15px;
+ 
+    width: 35px;
+
+    height: 35px;
+ 
+    border: 0;
+
+    background: transparent;
+ 
+    font-size: 30px;
+
+    cursor: pointer;
+
+    color: #111;
+
+}
+
+/* Ajustes para móviles */
+
+@media (max-width: 768px) {
+
+ .middlebar {
+    width: 90vw;
+    height: 60vh;
+    padding: 25px;
+  }
+
+  /* El hijo DENTRO de la media query para que se adapte al móvil */
+  .panelImagen {
+    width: 80px; /* Se hace más pequeño para que no se pixele en el móvil */
+    transform: translate(-50%, -50%) translateX(15vw); /* Menos empuje para que no se salga */
+  }
+
+} /* <- Asegúrate de que esta llave cierra toda la media query al final */
+
+
+.map-container {
+  flex:1;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.panelImagen {
+
+  width: 80px;
+
+  height: auto;
+
+  position: fixed;
+
+  box-sizing: border-box;
+
+  padding: 40px;
+
+  background: #fff;
+
+
+
+  border-radius: 2px;
+
+  position: fixed;
+
+  top: 50%;
+
+  left: 50%;
+
+  margin-left: auto;
+
+  transform: translate(-50%, -50%) translateX(25vw);
+
+}
+
+#plano-antiguo-pasillo-cristal-A003:hover .st3 {
+  fill: #e6007e;
+}
+
+#plano-antiguo-pasillo-cristal:hover {
+  fill: #fff;
+  font-weight: 700;
+  font-family: FiraSans-Bold, 'Fira Sans';
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 180px;
+  height: auto;
+  z-index: 10;
+}
+
+.map-container svg {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+#panel-imagen {
+  width: 100%;
+  height: auto;
+}
+
+
+#plano-antiguo-puerta-A-principal:hover .st4,
+#plano-nuevo-puerta-N-principal:hover .st4 {
+  font-size: 44px;
+  font-weight: 900;
+}
+
+#plano-antiguo-puerta-A-principal .st4,
+#plano-nuevo-puerta-N-principal .st4 {
+  transition: font-size 0.25s ease;
+}
